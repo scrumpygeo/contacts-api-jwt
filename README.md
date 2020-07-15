@@ -1,3 +1,3 @@
 # README
 
-- no sprockets (no asset pipeline)
+Change API to use JWT
