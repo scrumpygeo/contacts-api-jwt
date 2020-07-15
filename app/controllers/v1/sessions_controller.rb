@@ -8,7 +8,7 @@ class V1::SessionsController < ApplicationController
     @user = User.where(email: params[:email]).first
 
     if @user&.valid_password?(params[:password])
-      jwt = WebToken.encode(user)
+      jwt = WebToken.encode(@user)
         
       render :create, status: :created, locals: { token: jwt } 
     else
