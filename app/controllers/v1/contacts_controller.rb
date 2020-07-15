@@ -1,5 +1,6 @@
 class V1::ContactsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   #  NB todo: error checking with render
   def index 
     # @contacts = Contact.all
