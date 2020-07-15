@@ -16,7 +16,7 @@ class V1::SessionsController < ApplicationController
         
       render :create, status: :created, locals: { token: jwt } 
     else
-      head(:unauthorized)
+      render json: {error: 'invalid credentials'}, status: :unauthorized
     end
   end
 

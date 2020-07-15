@@ -9,6 +9,7 @@ class ApplicationController < ActionController::API
   private
 
   def payload 
+    # payload gives us the user
     JWT.decode(get_token, Rails.application.secrets.secret_key_base, true, { algorithm: 'HS256' }).first
   end
 
